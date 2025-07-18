@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>SportZone | Venta de artículos deportivos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background: #4ed4ff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+    }
+    .logo div {
+      line-height: 1.2;
+    }
+    .logo .subtitle {
+      font-size: 0.9em;
+      color: #003;
+    }
+    .site-title {
+      font-size: 1.5em;
+    }
+    section {
+      padding: 20px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+      background: #4ed4ff;
+    }
+    .product-card {
+      background: #fff;
+      width: 22%;
+      min-width: 200px;
+      margin: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+    .product-card .info {
+      margin: 10px 0;
+    }
+    .product-card button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      background: #4a4aff;
+      color: white;
+      cursor: pointer;
+    }
+    /* Dropdown menus */
+    .dropdown-menu {
+      display: none;
+      margin-top: 5px;
+    }
+    .dropdown-menu button {
+      background: #007BFF;
+      margin: 3px 2px;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    .dropdown-menu button:hover {
+      background: #0056b3;
+    }
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    table, th, td {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+    th {
+      background-color: #0066cc;
+      color: white;
+    }
+    footer {
+      background: #aaa;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      width: 45%;
+      min-width: 250px;
+      margin-bottom: 10px;
+    }
+    .footer-section img {
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .footer-section .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+    .footer-about img {
+      width: 65px;
+      height: 65px;
+      margin-top: 10px;
+    }
+    /* Mensaje bienvenida */
+    #bienvenida {
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #004a99;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo SportZone">
+      <div>
+        <strong>SportZone</strong><br>
+        <span class="subtitle">Artículos Deportivos</span>
+      </div>
+    </div>
+    <div class="site-title">Venta de Artículos Deportivos</div>
+  </header>
+
+  <!-- Mensaje de bienvenida -->
+  <div id="bienvenida"></div>
+
+  <section>
+    <h2>Tabla de Artículos Deportivos y su uso</h2>
+    <table border="1">
+      <thead>
+        <tr style="background-color:#007BFF; color:white;">
+          <th>Artículo</th>
+          <th>Deporte</th>
+          <th>Uso principal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color:#cce5ff;">
+          <td>Balón</td>
+          <td>Fútbol</td>
+          <td>Jugar partidos</td>
+        </tr>
+        <tr style="background-color:#cce5ff;">
+          <td>Tenis</td>
+          <td>Futbol</td>
+          <td>Correr</td>
+        </tr>
+        <tr style="background-color:#cce5ff;">
+          <td>Mochila</td>
+          <td>Gimnasio</td>
+          <td>Guardar las cosas</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="productos" class="products">
+    <div class="product-card">
+      <img src="cosa1.jpg" alt="Producto 1">
+      <div class="info"><p>Producto 1</p></div>
+      <button class="btn-tallas">Tallas</button>
+      <div class="dropdown-menu dropdown-tallas">
+        <button onclick="alert('Seleccionaste talla S')">S</button>
+        <button onclick="alert('Seleccionaste talla M')">M</button>
+        <button onclick="alert('Seleccionaste talla L')">L</button>
+      </div>
+      <button class="btn-colores">Colores</button>
+      <div class="dropdown-menu dropdown-colores">
+        <button onclick="alert('Seleccionaste color Rojo')">Rojo</button>
+        <button onclick="alert('Seleccionaste color Azul')">Azul</button>
+        <button onclick="alert('Seleccionaste color Verde')">Verde</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="cosa2.jpg" alt="Producto 2">
+      <div class="info"><p>Producto 2</p></div>
+      <!-- Sin tallas para este producto -->
+      <button class="btn-colores">Colores</button>
+      <div class="dropdown-menu dropdown-colores">
+        <button onclick="alert('Seleccionaste color Rojo')">Rojo</button>
+        <button onclick="alert('Seleccionaste color Azul')">Azul</button>
+        <button onclick="alert('Seleccionaste color Verde')">Verde</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="cosa3.jpg" alt="Producto 3">
+      <div class="info"><p>Producto 3</p></div>
+      <button class="btn-tallas">Tallas</button>
+      <div class="dropdown-menu dropdown-tallas">
+        <button onclick="alert('Seleccionaste talla S')">S</button>
+        <button onclick="alert('Seleccionaste talla M')">M</button>
+        <button onclick="alert('Seleccionaste talla L')">L</button>
+      </div>
+      <button class="btn-colores">Colores</button>
+      <div class="dropdown-menu dropdown-colores">
+        <button onclick="alert('Seleccionaste color Rojo')">Rojo</button>
+        <button onclick="alert('Seleccionaste color Azul')">Azul</button>
+        <button onclick="alert('Seleccionaste color Verde')">Verde</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="cosa4.jpg" alt="Producto 4">
+      <div class="info"><p>Producto 4</p></div>
+      <!-- Sin tallas para este producto -->
+      <button class="btn-colores">Colores</button>
+      <div class="dropdown-menu dropdown-colores">
+        <button onclick="alert('Seleccionaste color Rojo')">Rojo</button>
+        <button onclick="alert('Seleccionaste color Azul')">Azul</button>
+        <button onclick="alert('Seleccionaste color Verde')">Verde</button>
+      </div>
+    </div>
+  </section>
+<!-- Formulario de pedidos -->
+  <section>
+    <h2>Realiza tu pedido</h2>
+    <form action="procesar_pedido.php" method="post">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre_cliente" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+
+      <label for="producto">Producto:</label>
+      <select id="producto" name="producto" required>
+        <option value="">--Seleccione un producto--</option>
+        <option value="Producto 1">Producto 1</option>
+        <option value="Producto 2">Producto 2</option>
+        <option value="Producto 3">Producto 3</option>
+        <option value="Producto 4">Producto 4</option>
+      </select>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-section footer-contact">
+      <div class="contact-item">
+        <img src="envio.jpg" alt="Envío">
+        <span>Dirección: Calle Ejemplo #123</span>
+      </div>
+      <div class="contact-item">
+        <img src="telefono.jpg" alt="Teléfono">
+        <span>Teléfono: 55‑38009178</span>
+      </div>
+      <div class="contact-item">
+        <img src="correo.jpg" alt="Email">
+        <span>E‑mail: ejemplo@sportzone.com</span>
+      </div>
+    </div>
+    <div class="footer-section footer-about">
+      <h4>Acerca de la compañía</h4>
+      <p>Texto breve sobre la empresa...</p>
+      <img src="logo.jpg" alt="Logo pequeño">
+    </div>
+  </footer>
+
+  <script>
+    // Mostrar mensaje de bienvenida con usuario desde URL
+    const params = new URLSearchParams(window.location.search);
+    const usuario = params.get('usuario');
+    if (usuario) {
+      document.getElementById('bienvenida').textContent = `Bienvenido, ${usuario}!`;
+    }
+
+    // Funcionalidad para mostrar/ocultar dropdowns de tallas y colores
+    document.querySelectorAll('.btn-tallas').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+    document.querySelectorAll('.btn-colores').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Opcional: cerrar dropdowns si clic fuera
+    document.addEventListener('click', (e) => {
+      const isButton = e.target.classList.contains('btn-tallas') || e.target.classList.contains('btn-colores');
+      if (!isButton) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
+  <section>
+    <h2>Video sobre deportes</h2>
+    <video controls width="500">
+      <source src="PUMA _  Nuevos ULTRA y FUTURE.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+  </section>
+
+  <footer>
+    <div class="footer-section footer-contact">
+      <div class="contact-item">
+        <img src="envio.jpg" alt="Envío">
+        <span>Dirección: Calle Ejemplo #123</span>
+      </div>
+      <div class="contact-item">
+        <img src="telefono.jpg" alt="Teléfono">
+        <span>Teléfono: 55‑38009178</span>
+      </div>
+      <div class="contact-item">
+        <img src="correo.jpg" alt="Email">
+        <span>E‑mail: ejemplo@sportzone.com</span>
+      </div>
+    </div>
+    <div class="footer-section footer-about">
+      <h4>Acerca de la compañía</h4>
+      <p>Texto breve sobre la empresa...</p>
+      <img src="logo.jpg" alt="Logo pequeño">
+    </div>
+  </footer>
+
+  <script>
+    // Mostrar mensaje de bienvenida con usuario desde URL
+    const params = new URLSearchParams(window.location.search);
+    const usuario = params.get('usuario');
+    if (usuario) {
+      document.getElementById('bienvenida').textContent = `Bienvenido, ${usuario}!`;
+    }
+
+    // Funcionalidad para mostrar/ocultar dropdowns de tallas y colores
+    document.querySelectorAll('.btn-tallas').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+    document.querySelectorAll('.btn-colores').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.nextElementSibling;
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+
+    // Opcional: cerrar dropdowns si clic fuera
+    document.addEventListener('click', (e) => {
+      const isButton = e.target.classList.contains('btn-tallas') || e.target.classList.contains('btn-colores');
+      if (!isButton) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>SportZone | Formulario</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #ddd;
+      color: #222;
+    }
+    header {
+      background: #4ed4ff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo div {
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: #003;
+    }
+    .site-title {
+      margin-left: auto;
+      font-size: 1.5em;
+    }
+    .divider {
+      height: 15px;
+      background: #3a0000;
+    }
+    .form-section {
+      background: #bbb;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    form {
+      width: 400px;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div>
+        <strong>SportZone</strong><br>
+        <span class="subtitle">artículos deportivos</span>
+      </div>
+    </div>
+    <div class="site-title">Venta de artículos deportivos</div>
+  </header>
+
+  <div class="divider"></div>
+
+  <div class="form-section">
+    <form onsubmit="return validarFormulario()">
+      <div id="errorMensaje" class="error"></div>
+
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="id" placeholder="text">
+
+      <label for="pass">Password:</label>
+      <input type="password" id="pass" name="pass" placeholder="*****">
+
+      <input type="submit" value="Entrar">
+    </form>
+  </div>
+
+  <script>
+    function validarFormulario() {
+      const id = document.getElementById("id").value.trim();
+      const pass = document.getElementById("pass").value.trim();
+      const errorMensaje = document.getElementById("errorMensaje");
+
+      const usuarioValido = "admin";
+      const passwordValido = "1234";
+
+      if (id === "" || pass === "") {
+        errorMensaje.textContent = "Por favor, completa todos los campos.";
+        return false;
+      }
+
+      if (id === usuarioValido && pass === passwordValido) {
+        // Redirige con parámetro usuario
+        window.location.href = `pagina.html?usuario=${encodeURIComponent(id)}`;
+        return false;
+      } else {
+        errorMensaje.textContent = "ID o contraseña incorrectos.";
+        return false;
+      }
+    }
+  </script>
+
+</body>
+</html>
